@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Game Back Grounds/BnWCityScape.png" type="Texture" id=1]
+[ext_resource path="res://Game Back Grounds/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://How To Play.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+outline_size = 1
+outline_color = Color( 0.658824, 0.117647, 0.117647, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="Node" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BnWCityScape" type="Sprite" parent="."]
+position = Vector2( -70.1784, -68.3416 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_left = 32.8178
+margin_top = 128.999
+margin_right = 1062.82
+margin_bottom = 502.999
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = 5.0
+margin_right = 1025.0
+margin_bottom = 413.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.282353, 0.0705882, 0.341176, 1 )
+text = "Controls : 
+
+ A : Left
+
+ D : Right
+
+Spacebar(Space) : Jump 
+
+
+# P.S : You Can Jump 2 
+
+Times In The Air 
+
+	And 1 Time From The Ground 
+	
+
+
+GamePlay : 
+
+You Got To Collect Every SuperWeed Plant So You Can Tie the Two Sides Of The Broken Low World With It.
+ 
+You Have To Do That Before Your Weed Consumption Reach Its Limit. 
+
+If Your Weed Consumption Reached Its Limit , Then Thats A Game Over For You Because You Got Too High 
+
+And Passed Out Passed Out Forever 
+
+Level Design : 
+		
+Every Level Is Designed To Be Harder Than The One Before It .
+
+So I Hope You Play The Levels According To That ."
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 26.0
+margin_right = 99.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.133333, 0.427451, 0.121569, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Menu"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

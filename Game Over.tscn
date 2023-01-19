@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Game Back Grounds/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Game Over.gd" type="Script" id=2]
+[ext_resource path="res://test-screen-glitch-texture_88188-317.jpg" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 3
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 3
+outline_color = Color( 0.184314, 0.823529, 0.00392157, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="test-screen-glitch-texture_88188-317" type="Sprite" parent="."]
+position = Vector2( 528.33, 213.165 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.17
+anchor_right = 0.866
+anchor_bottom = 0.561
+margin_left = 0.510849
+margin_top = 14.3499
+margin_right = -0.193237
+margin_bottom = -0.250122
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = 130.0
+margin_top = 135.0
+margin_right = 580.0
+margin_bottom = 185.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Game over"
+uppercase = true
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.457
+anchor_top = 0.445
+anchor_right = 0.583
+anchor_bottom = 0.483
+margin_left = 4.81531
+margin_top = 0.00808716
+margin_right = -0.208679
+margin_bottom = 0.208069
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "M e n u"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
